@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres_facturacion
+    environment:
+      POSTGRES_DB: facturaciondb
+      POSTGRES_USER: cristian
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - factu-net
+
+  adminer:
+    image: adminer
+    container_name: adminer_facturacion
+    ports:
+      - "8081:8080"
+    networks:
+      - factu-net
+
+  backend:
+    build: .
+    container_name: backend_facturacion
+    depends_on:
+      - postgres
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/facturaciondb
+      USERNAME: cristian
+      PASSWORD: 1234
+      JWT_SECRET: mi_super_clave_secreta_para_jwt_123456789
+    ports:
+      - "8080:8080"
+    networks:
+      - factu-net
+
+networks:
+  factu-net:
+
+volumes:
+  pgdata:

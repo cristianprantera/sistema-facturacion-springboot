@@ -240,7 +240,3 @@ Incluye buenas prácticas de arquitectura, seguridad y despliegue.
 **Cristian Prantera**
 LinkedIn: [https://www.linkedin.com/in/cristianprantera](https://www.linkedin.com/in/cristianprantera)
 
----
-
-```
-```

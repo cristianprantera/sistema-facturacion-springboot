@@ -1,4 +1,3 @@
-````markdown
 # Sistema de Facturación – API REST (Spring Boot + PostgreSQL + Docker + JWT + Swagger)
 
 Proyecto backend desarrollado con **Spring Boot**, **Java 23**, **PostgreSQL**, **Docker**, **Spring Security (JWT)** y **Swagger/OpenAPI**, que implementa un sistema completo de facturación: gestión de **productos**, **clientes**, **facturas** y **usuarios**, con control de roles (**ADMIN** / **EMPLEADO**) y autenticación mediante tokens JWT.
